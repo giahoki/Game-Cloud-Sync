@@ -1,5 +1,4 @@
 {
-  "app.subtitle": "резервні копії збережень у Google Drive",
   "drive.checking": "Перевіряю...",
   "drive.connected": "Підключено · збереження в папці «{0}»",
   "drive.notConnected": "Не підключено",
@@ -97,5 +96,11 @@
   "unit.kb": "КБ",
   "unit.mb": "МБ",
   "unit.gb": "ГБ",
-  "unit.tb": "ТБ"
+  "unit.tb": "ТБ",
+  "update.title": "Доступне оновлення",
+  "update.text": "Вийшла версія {0} (у тебе {1}). Відкрити сторінку релізу?",
+  "update.open": "Відкрити",
+  "update.available": "Доступна нова версія: {0}",
+  "update.failed": "Не вдалося перевірити оновлення: {0}",
+  "settings.version": "Версія {0}"
 }

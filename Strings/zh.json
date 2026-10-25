@@ -1,5 +1,4 @@
 {
-  "app.subtitle": "将游戏存档备份到 Google Drive",
   "drive.checking": "正在检查...",
   "drive.connected": "已连接 · 存档位于“{0}”文件夹",
   "drive.notConnected": "未连接",
@@ -97,5 +96,11 @@
   "unit.kb": "KB",
   "unit.mb": "MB",
   "unit.gb": "GB",
-  "unit.tb": "TB"
+  "unit.tb": "TB",
+  "update.title": "有可用更新",
+  "update.text": "版本 {0} 已发布（当前为 {1}）。打开发布页面？",
+  "update.open": "打开",
+  "update.available": "有新版本：{0}",
+  "update.failed": "检查更新失败：{0}",
+  "settings.version": "版本 {0}"
 }

@@ -1,5 +1,4 @@
 {
-  "app.subtitle": "Spielstände in Google Drive sichern",
   "drive.checking": "Wird geprüft...",
   "drive.connected": "Verbunden · Spielstände im Ordner „{0}“",
   "drive.notConnected": "Nicht verbunden",
@@ -97,5 +96,11 @@
   "unit.kb": "KB",
   "unit.mb": "MB",
   "unit.gb": "GB",
-  "unit.tb": "TB"
+  "unit.tb": "TB",
+  "update.title": "Update verfügbar",
+  "update.text": "Version {0} ist erschienen (du hast {1}). Release-Seite öffnen?",
+  "update.open": "Öffnen",
+  "update.available": "Neue Version verfügbar: {0}",
+  "update.failed": "Update-Prüfung fehlgeschlagen: {0}",
+  "settings.version": "Version {0}"
 }

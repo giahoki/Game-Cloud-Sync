@@ -1,5 +1,4 @@
 {
-  "app.subtitle": "copia de partidas guardadas en Google Drive",
   "drive.checking": "Comprobando...",
   "drive.connected": "Conectado · partidas en la carpeta «{0}»",
   "drive.notConnected": "No conectado",
@@ -97,5 +96,11 @@
   "unit.kb": "KB",
   "unit.mb": "MB",
   "unit.gb": "GB",
-  "unit.tb": "TB"
+  "unit.tb": "TB",
+  "update.title": "Actualización disponible",
+  "update.text": "Ya salió la versión {0} (tienes la {1}). ¿Abrir la página de la versión?",
+  "update.open": "Abrir",
+  "update.available": "Nueva versión disponible: {0}",
+  "update.failed": "No se pudo buscar actualizaciones: {0}",
+  "settings.version": "Versión {0}"
 }

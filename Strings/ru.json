@@ -1,5 +1,4 @@
 {
-  "app.subtitle": "бэкап сейвов в Google Drive",
   "drive.checking": "Проверяю...",
   "drive.connected": "Подключён · сейвы в папке «{0}»",
   "drive.notConnected": "Не подключён",
@@ -97,5 +96,11 @@
   "unit.kb": "КБ",
   "unit.mb": "МБ",
   "unit.gb": "ГБ",
-  "unit.tb": "ТБ"
+  "unit.tb": "ТБ",
+  "update.title": "Доступно обновление",
+  "update.text": "Вышла версия {0} (у тебя {1}). Открыть страницу релиза?",
+  "update.open": "Открыть",
+  "update.available": "Доступна новая версия: {0}",
+  "update.failed": "Не удалось проверить обновления: {0}",
+  "settings.version": "Версия {0}"
 }

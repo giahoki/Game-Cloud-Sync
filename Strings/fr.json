@@ -1,5 +1,4 @@
 {
-  "app.subtitle": "sauvegarde des parties dans Google Drive",
   "drive.checking": "Vérification...",
   "drive.connected": "Connecté · sauvegardes dans le dossier « {0} »",
   "drive.notConnected": "Non connecté",
@@ -97,5 +96,11 @@
   "unit.kb": "Ko",
   "unit.mb": "Mo",
   "unit.gb": "Go",
-  "unit.tb": "To"
+  "unit.tb": "To",
+  "update.title": "Mise à jour disponible",
+  "update.text": "La version {0} est sortie (vous avez la {1}). Ouvrir la page de la version ?",
+  "update.open": "Ouvrir",
+  "update.available": "Nouvelle version disponible : {0}",
+  "update.failed": "Échec de la vérification des mises à jour : {0}",
+  "settings.version": "Version {0}"
 }

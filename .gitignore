@@ -61,3 +61,6 @@ local_backups/
 Thumbs.db
 desktop.ini
 $RECYCLE.BIN/
+
+# Inno Setup installer output
+Output/

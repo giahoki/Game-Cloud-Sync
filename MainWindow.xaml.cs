@@ -20,8 +20,11 @@ public sealed partial class MainWindow : Window
         ExtendsContentIntoTitleBar = true;
         SetTitleBar(AppTitleBar);
 
-        AppWindow.SetIcon("Assets/AppIcon.ico");
+        // полный путь: при автозапуске с Windows текущая папка — System32, а не папка программы
+        var icon = Path.Combine(AppContext.BaseDirectory, "Assets", "AppIcon.ico");
+        AppWindow.SetIcon(icon);
         AppWindow.Resize(new Windows.Graphics.SizeInt32(1000, 760));
+        CenterOnScreen();
 
         _hwnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
         _hook = new WindowHook(_hwnd);
@@ -31,7 +34,7 @@ public sealed partial class MainWindow : Window
             ShowFromTray();  // программу запустили ещё раз — показываем это окно
             return true;
         };
-        _tray = new TrayIcon(_hwnd, _hook, Path.Combine(AppContext.BaseDirectory, "Assets", "AppIcon.ico"), "Game Cloud Sync");
+        _tray = new TrayIcon(_hwnd, _hook, icon, "Game Cloud Sync");
         _tray.OpenRequested += ShowFromTray;
         _tray.ExitRequested += ExitApp;
 
@@ -50,11 +53,20 @@ public sealed partial class MainWindow : Window
     /// <summary>Пересоздаёт главную страницу (после смены языка).</summary>
     public void Reload()
     {
-        AppTitleBar.Subtitle = L.T("app.subtitle");
         _tray.OpenText = L.T("tray.open");
         _tray.ExitText = L.T("tray.exit");
         RootFrame.Navigate(typeof(MainPage));
         RootFrame.BackStack.Clear();
+    }
+
+    /// <summary>Ставит окно по центру рабочей области монитора, на котором оно открылось.</summary>
+    void CenterOnScreen()
+    {
+        var area = Microsoft.UI.Windowing.DisplayArea.GetFromWindowId(AppWindow.Id, Microsoft.UI.Windowing.DisplayAreaFallback.Primary).WorkArea;
+        var size = AppWindow.Size;
+        AppWindow.Move(new Windows.Graphics.PointInt32(
+            area.X + Math.Max(0, (area.Width - size.Width) / 2),
+            area.Y + Math.Max(0, (area.Height - size.Height) / 2)));
     }
 
     /// <summary>Показывает или убирает значок в трее.</summary>

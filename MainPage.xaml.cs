@@ -36,7 +36,25 @@ public sealed partial class MainPage : Page
             _running = await Task.Run(() => Running.Keys(_games.Select(g => g.Game).ToList()));
             _watcher.Tick += (_, _) => WatchGames();
             _watcher.Start();
+            await CheckUpdateAsync();
         };
+    }
+
+    static bool _updateChecked;  // страница пересоздаётся при смене языка — проверяем один раз за запуск
+
+    /// <summary>Если на GitHub вышел релиз новее, предлагает открыть его страницу.</summary>
+    async Task CheckUpdateAsync()
+    {
+        if (_updateChecked) return;
+        _updateChecked = true;
+        try
+        {
+            if (await Updater.CheckAsync() is not var (version, url)) return;
+            Log(L.F("update.available", version), Level.Debug);
+            if (await ConfirmAsync(L.T("update.title"), L.F("update.text", version, Updater.Current), L.T("update.open")))
+                await Windows.System.Launcher.LaunchUriAsync(new Uri(url));
+        }
+        catch (Exception e) { Log(L.F("update.failed", e.Message), Level.Debug); }  // нет сети — молча работаем дальше
     }
 
     // ------------------------------------------------------------ helpers
@@ -531,6 +549,12 @@ public sealed partial class MainPage : Page
         panel.Children.Add(Setting(tray, "settings.tray.desc"));
         panel.Children.Add(Setting(autostart, "settings.autostart.desc"));
         panel.Children.Add(language);
+        panel.Children.Add(new HyperlinkButton
+        {
+            Content = L.F("settings.version", Updater.Current),
+            NavigateUri = new Uri(Updater.ReleasesUrl),
+            Padding = new Thickness(0),
+        });
 
         var dlg = new ContentDialog
         {

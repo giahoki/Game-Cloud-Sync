@@ -1,5 +1,4 @@
 {
-  "app.subtitle": "game save backup to Google Drive",
   "drive.checking": "Checking...",
   "drive.connected": "Connected · saves in the “{0}” folder",
   "drive.notConnected": "Not connected",
@@ -97,5 +96,11 @@
   "unit.kb": "KB",
   "unit.mb": "MB",
   "unit.gb": "GB",
-  "unit.tb": "TB"
+  "unit.tb": "TB",
+  "update.title": "Update available",
+  "update.text": "Version {0} is out (you have {1}). Open the release page?",
+  "update.open": "Open",
+  "update.available": "New version available: {0}",
+  "update.failed": "Update check failed: {0}",
+  "settings.version": "Version {0}"
 }
