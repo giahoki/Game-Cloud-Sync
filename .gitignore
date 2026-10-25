@@ -1,0 +1,63 @@
+## .NET / Visual Studio
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+ARM64/
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+artifacts/
+
+# Build logs
+[Ll]og/
+[Ll]ogs/
+*.log
+*.binlog
+
+# NuGet
+*.nupkg
+*.snupkg
+*.nuget.props
+*.nuget.targets
+project.lock.json
+
+# MSIX packaging output
+AppPackages/
+BundleArtifacts/
+*.msix
+*.msixupload
+*.appx
+*.appxbundle
+*.appxupload
+
+# Publish output (profiles in Properties/PublishProfiles are kept in the repo)
+publish/
+PublishScripts/
+
+# Code analysis and tooling
+_ReSharper*/
+*.DotSettings.user
+*.dotCover
+.idea/
+.vscode/
+
+# Generated files
+Generated\ Files/
+*_wpftmp.csproj
+
+# App data: never commit (Google Drive token, save backups, rclone)
+rclone.conf
+rclone.exe
+*.zip
+manifest.yaml
+manifest_index*.json
+local_backups/
+
+# Windows
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
